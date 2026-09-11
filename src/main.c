@@ -8,26 +8,30 @@
 #include <time.h>
 
 int main(int argc, char *argv[]) {
-  int opt;
-  int total_seconds;
+    int opt;
+    int total_seconds = -1;
+    char *soundfile = NULL;
 
-  char *soundfile;
+    while ((opt = getopt(argc, argv, "t:s:")) != -1) {
+        switch (opt) {
+        case 't':
+            total_seconds = atoi(optarg);
+            break;
 
-  while ((opt = getopt(argc, argv, "t:s:")) != -1) {
-    switch (opt) {
-    case 't':
-      total_seconds = atoi(optarg);
-      break;
+        case 's':
+            soundfile = optarg;
+            break;
 
-    case 's':
-      soundfile = optarg;
-      break;
-
-    default:
-      fprintf(stderr, "Usage: %s [-t secs] [-s soundfile]\n", argv[0]);
-      return EXIT_FAILURE;
+        default:
+            fprintf(stderr, "Usage: %s -t secs -s soundfile\n", argv[0]);
+            return EXIT_FAILURE;
+        }
     }
-  }
+
+    if (total_seconds < 0 || soundfile == NULL) {
+        fprintf(stderr, "Usage: %s -t secs -s soundfile\n", argv[0]);
+        return EXIT_FAILURE;
+    }
 
   Application app;
 
