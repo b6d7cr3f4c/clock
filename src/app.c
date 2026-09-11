@@ -1,4 +1,5 @@
 #include "app.h"
+#include <stdbool.h>
 
 int app_init(Application* app) {
   if (render_init(&app->render) != 0) {
@@ -8,6 +9,8 @@ int app_init(Application* app) {
   if (ma_engine_init(NULL, &app->audio) !=  MA_SUCCESS ) {
     return -1;
   }
+
+  ma_engine_set_volume(&app->audio, 5.0);
 
   app->running = true;
 
@@ -21,3 +24,6 @@ void app_fini(Application* app) {
   app->running = false;
 }
 
+bool app_should_close(Application *app) {
+ return  false;
+}

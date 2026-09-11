@@ -21,5 +21,6 @@ typedef struct {
 
 int app_init(Application* app);
 void app_fini(Application* app);
+bool app_should_close(Application* app);
 
 #endif // !APP_H
