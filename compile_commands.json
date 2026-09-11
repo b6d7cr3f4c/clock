@@ -1,0 +1,12 @@
+[
+  {
+    "directory": "/home/don/Documents/Projects/clock",
+    "command": "cc -Iexternal -c src/main.c",
+    "file": "src/main.c"
+  },
+  {
+    "directory": "/home/don/Documents/Projects/clock",
+    "command": "cc -Iexternal -c src/app.c",
+    "file": "src/app.c"
+  }
+]
