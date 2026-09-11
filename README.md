@@ -2,7 +2,7 @@
 
 A simple terminal clock application written in C.
 
-## Post-Install
+## Pre-Compile
 
 ```bash
 git submodule update --init --recursive
