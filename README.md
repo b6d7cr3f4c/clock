@@ -2,6 +2,12 @@
 
 A simple terminal clock application written in C.
 
+## Post-Install
+
+```bash
+git submodule update --init --recursive
+```
+
 ## Compile
 
 ```bash
